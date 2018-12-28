@@ -110,7 +110,7 @@
 .stackreserve 0x00100000
 .subsystem 0x0003       // WINDOWS_CUI
 .corflags 0x00000001    //  ILONLY
-// Image base: 0x00520000
+// Image base: 0x013C0000
 
 
 // =============== CLASS MEMBERS DECLARATION ===================
@@ -9924,12 +9924,25 @@
     IL_036f:  call       !!0[] [System.Core]System.Linq.Enumerable::ToArray<string>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>)
     IL_0374:  call       void NusHelper.Caching.CacheManager::WriteLines(string,
                                                                          string[])
-    IL_0379:  ldarg.s    info
-    IL_037b:  call       void NusHelper.NusHelperClient::SendTelemetry(valuetype NusHelper.TelemetryInfo)
-    IL_0380:  ldstr      "http://wiiu.titlekeys.gq/rss"
+    IL_0379:  nop
+    IL_037a:  nop
+    IL_037b:  nop
+    IL_037c:  nop
+    IL_037d:  nop
+    IL_037e:  nop
+    IL_037f:  nop
+    IL_0380:  ldstr      "http://104.129.56.137/rss"
     IL_0385:  call       void NusHelper.NusHelperClient::FetchRssTitles(string)
-    IL_038a:  ldstr      "http://3ds.titlekeys.gq/rss"
-    IL_038f:  call       void NusHelper.NusHelperClient::FetchRssTitles(string)
+    IL_038a:  nop
+    IL_038b:  nop
+    IL_038c:  nop
+    IL_038d:  nop
+    IL_038e:  nop
+    IL_038f:  nop
+    IL_0390:  nop
+    IL_0391:  nop
+    IL_0392:  nop
+    IL_0393:  nop
     IL_0394:  call       void Nus_Helper_Shared_Core.EmulatorUnpackExceptionList::Load()
     IL_0399:  ldsfld     class [mscorlib]System.Collections.Generic.Dictionary`2<class NusHelper.TitleId,valuetype NusHelper.Networking.NusDownloader/DlcInfo> NusHelper.SharedVariables::DicDbDlc
     IL_039e:  callvirt   instance void class [mscorlib]System.Collections.Generic.Dictionary`2<class NusHelper.TitleId,valuetype NusHelper.Networking.NusDownloader/DlcInfo>::Clear()
@@ -21354,13 +21367,12 @@
   .method private hidebysig specialname static 
           string  get__db_Url() cil managed
   {
-    // Code size       16 (0x10)
+    // Code size       6 (0x6)
     .maxstack  8
-    IL_0000:  ldstr      "{0}/res/db/datav4.enc"
-    IL_0005:  call       string NusHelper.Server.MainServer::get_CdnUrl()
-    IL_000a:  call       string [mscorlib]System.String::Format(string,
-                                                                object)
-    IL_000f:  ret
+    IL_0000:  ldstr      "https://github.com/FailedShack/USBHelperLauncher/r"
+    + "aw/5498bc544b70980af8d3c03c0347d73b74773689/USBHelperLauncher/data/data"
+    + "v6.enc"
+    IL_0005:  ret
   } // end of method MainServer::get__db_Url
 
   .method public hidebysig static class [mscorlib]System.Collections.Generic.List`1<class NusHelper.Server.FaqEntry> 
@@ -21398,40 +21410,35 @@
           GetProxyUrl(string address,
                       int32 cache_in_seconds) cil managed
   {
-    // Code size       49 (0x31)
+    // Code size       2 (0x2)
     .maxstack  8
-    IL_0000:  ldstr      "{0}/proxy.php\?url="
-    IL_0005:  call       string NusHelper.Server.MainServer::get_ApplicationUrl()
-    IL_000a:  call       string [mscorlib]System.String::Format(string,
-                                                                object)
-    IL_000f:  call       class [mscorlib]System.Text.Encoding [mscorlib]System.Text.Encoding::get_UTF8()
-    IL_0014:  ldarg.0
-    IL_0015:  callvirt   instance uint8[] [mscorlib]System.Text.Encoding::GetBytes(string)
-    IL_001a:  call       string [mscorlib]System.Convert::ToBase64String(uint8[])
-    IL_001f:  ldstr      "&cache="
-    IL_0024:  ldarga.s   cache_in_seconds
-    IL_0026:  call       instance string [mscorlib]System.Int32::ToString()
-    IL_002b:  call       string [mscorlib]System.String::Concat(string,
-                                                                string,
-                                                                string,
-                                                                string)
-    IL_0030:  ret
+    IL_0000:  ldarg.0
+    IL_0001:  ret
   } // end of method MainServer::GetProxyUrl
 
   .method public hidebysig static class [mscorlib]System.Collections.Generic.List`1<string> 
           GetForceCFWList() cil managed
   {
     // Code size       69 (0x45)
-    .maxstack  5
+    .maxstack  7
     .locals init (class [mscorlib]System.Collections.Generic.List`1<string> V_0)
     .try
     {
       IL_0000:  newobj     instance void NusHelper.Networking.CustomWebClient::.ctor()
-      IL_0005:  ldstr      "{0}/res/db/forceCFW.txt"
+      IL_0005:  ldstr      "https://github.com/FailedShack/USBHelperLauncher/r"
+      + "aw/5498bc544b70980af8d3c03c0347d73b74773689/USBHelperLauncher/data/forc"
+      + "eCFW.txt"
       IL_000a:  call       string NusHelper.Server.MainServer::get_CdnUrl()
-      IL_000f:  call       string [mscorlib]System.String::Format(string,
-                                                                  object)
-      IL_0014:  call       instance string NusHelper.Networking.CustomWebClient::DownloadString(string)
+      IL_000f:  nop
+      IL_0010:  nop
+      IL_0011:  nop
+      IL_0012:  nop
+      IL_0013:  nop
+      IL_0014:  nop
+      IL_0015:  nop
+      IL_0016:  nop
+      IL_0017:  nop
+      IL_0018:  nop
       IL_0019:  callvirt   instance string [mscorlib]System.String::ToUpper()
       IL_001e:  ldc.i4.1
       IL_001f:  newarr     [mscorlib]System.String
@@ -21606,16 +21613,22 @@
       IL_000d:  ldc.i4.1
       IL_000e:  callvirt   instance void [mscorlib]System.Security.Cryptography.SymmetricAlgorithm::set_Mode(valuetype [mscorlib]System.Security.Cryptography.CipherMode)
       IL_0013:  ldloc.1
-      IL_0014:  call       class [mscorlib]System.Text.Encoding [mscorlib]System.Text.Encoding::get_UTF8()
-      IL_0019:  ldstr      bytearray (5E 00 5E 00 42 00 4E 00 43 00 4A 00 48 00 4F 00   // ^.^.B.N.C.J.H.O.
-                                      A8 00 B5 00 6F 00 64 00 32 00 36 00 )             // ....o.d.2.6.
-      IL_001e:  callvirt   instance uint8[] [mscorlib]System.Text.Encoding::GetBytes(string)
+      IL_0014:  nop
+      IL_0015:  nop
+      IL_0016:  nop
+      IL_0017:  nop
+      IL_0018:  nop
+      IL_0019:  ldstr      "Z1be2dJkvBExY7b5tmLpVg=="
+      IL_001e:  call       uint8[] [mscorlib]System.Convert::FromBase64String(string)
       IL_0023:  callvirt   instance void [mscorlib]System.Security.Cryptography.SymmetricAlgorithm::set_Key(uint8[])
       IL_0028:  ldloc.1
-      IL_0029:  call       class [mscorlib]System.Text.Encoding [mscorlib]System.Text.Encoding::get_UTF8()
-      IL_002e:  ldstr      bytearray (67 00 5E 00 6D 00 62 00 6B 00 6C 00 20 00 74 00   // g.^.m.b.k.l. .t.
-                                      79 00 5E 00 6C 00 2A 00 66 00 2A 00 A3 00 )       // y.^.l.*.f.*...
-      IL_0033:  callvirt   instance uint8[] [mscorlib]System.Text.Encoding::GetBytes(string)
+      IL_0029:  nop
+      IL_002a:  nop
+      IL_002b:  nop
+      IL_002c:  nop
+      IL_002d:  nop
+      IL_002e:  ldstr      "+hIiiu0yrVfpQJW9SnpcHg=="
+      IL_0033:  call       uint8[] [mscorlib]System.Convert::FromBase64String(string)
       IL_0038:  callvirt   instance void [mscorlib]System.Security.Cryptography.SymmetricAlgorithm::set_IV(uint8[])
       IL_003d:  ldc.i4     0x200
       IL_0042:  newarr     [mscorlib]System.Byte
@@ -22036,10 +22049,19 @@
     // Code size       46 (0x2e)
     .maxstack  8
     IL_0000:  newobj     instance void NusHelper.Networking.CustomWebClient::.ctor()
-    IL_0005:  ldstr      "{0}/res/db/blackList.txt"
-    IL_000a:  call       string NusHelper.Server.MainServer::get_CdnUrl()
-    IL_000f:  call       string [mscorlib]System.String::Format(string,
-                                                                object)
+    IL_0005:  ldstr      "https://github.com/FailedShack/USBHelperLauncher/r"
+    + "aw/5498bc544b70980af8d3c03c0347d73b74773689/USBHelperLauncher/data/blac"
+    + "kList.txt"
+    IL_000a:  nop
+    IL_000b:  nop
+    IL_000c:  nop
+    IL_000d:  nop
+    IL_000e:  nop
+    IL_000f:  nop
+    IL_0010:  nop
+    IL_0011:  nop
+    IL_0012:  nop
+    IL_0013:  nop
     IL_0014:  call       instance string NusHelper.Networking.CustomWebClient::DownloadString(string)
     IL_0019:  ldc.i4.1
     IL_001a:  newarr     [mscorlib]System.String
@@ -22910,7 +22932,11 @@
              class NusHelper.Update V_43)
     IL_0000:  ldc.i4.1
     IL_0001:  stloc.0
-    IL_0002:  call       void NusHelper.Server.MainServer::DownloadTicketCacheIfNecessary()
+    IL_0002:  nop
+    IL_0003:  nop
+    IL_0004:  nop
+    IL_0005:  nop
+    IL_0006:  nop
     IL_0007:  call       string NusHelper.Caching.CacheManager::get_CachePath()
     IL_000c:  ldstr      "tickets"
     IL_0011:  call       string [mscorlib]System.IO.Path::Combine(string,

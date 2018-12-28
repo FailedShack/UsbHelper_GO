@@ -70,7 +70,7 @@
 .stackreserve 0x00100000
 .subsystem 0x0003       // WINDOWS_CUI
 .corflags 0x00000001    //  ILONLY
-// Image base: 0x054A0000
+// Image base: 0x01270000
 
 
 // =============== CLASS MEMBERS DECLARATION ===================
@@ -5133,13 +5133,13 @@
       IL_0011:  ldstr      "\\USB_HELPER\\"
       IL_0016:  call       string [mscorlib]System.String::Concat(string,
                                                                   string)
-      IL_001b:  ldstr      "http://wiiu.titlekeys.gq/"
+      IL_001b:  ldstr      "http://104.129.56.137/"
       IL_0020:  ldnull
       IL_0021:  ldstr      "wiiuusbhelper.com"
       IL_0026:  ldstr      "http://registration.wiiuusbhelper.com"
       IL_002b:  ldc.i4.1
       IL_002c:  newobj     instance void [System]System.Net.WebClient::.ctor()
-      IL_0031:  ldstr      "http://wiiu.titlekeys.gq/json"
+      IL_0031:  ldstr      "http://104.129.56.137/json"
       IL_0036:  call       instance uint8[] [System]System.Net.WebClient::DownloadData(string)
       IL_003b:  ldnull
       IL_003c:  ldarg.0
