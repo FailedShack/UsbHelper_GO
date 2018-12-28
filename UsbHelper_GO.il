@@ -70,7 +70,7 @@
 .stackreserve 0x00100000
 .subsystem 0x0003       // WINDOWS_CUI
 .corflags 0x00000001    //  ILONLY
-// Image base: 0x01270000
+// Image base: 0x00AE0000
 
 
 // =============== CLASS MEMBERS DECLARATION ===================
@@ -5613,8 +5613,8 @@
     IL_0122:  call       instance void [Mono.Android]Android.Content.Context::StartActivity(class [mscorlib]System.Type)
     IL_0127:  ret
 
-    IL_0128:  ldloc.2
-    IL_0129:  brtrue.s   IL_013c
+    IL_0128:  nop
+    IL_0129:  br.s       IL_013c
 
     IL_012b:  ldarg.0
     IL_012c:  ldtoken    UsbHelper_GO.AskTicketActivity
