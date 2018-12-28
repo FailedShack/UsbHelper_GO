@@ -70,7 +70,7 @@
 .stackreserve 0x00100000
 .subsystem 0x0003       // WINDOWS_CUI
 .corflags 0x00000001    //  ILONLY
-// Image base: 0x004D0000
+// Image base: 0x054A0000
 
 
 // =============== CLASS MEMBERS DECLARATION ===================
@@ -5509,9 +5509,17 @@
 
     IL_000e:  ret
 
-    IL_000f:  newobj     instance void [System]System.Net.WebClient::.ctor()
-    IL_0014:  ldstr      "http://go.wiiuusbhelper.com/version"
-    IL_0019:  call       instance string [System]System.Net.WebClient::DownloadString(string)
+    IL_000f:  nop
+    IL_0010:  nop
+    IL_0011:  nop
+    IL_0012:  nop
+    IL_0013:  nop
+    IL_0014:  ldstr      "1.0.0.20"
+    IL_0019:  nop
+    IL_001a:  nop
+    IL_001b:  nop
+    IL_001c:  nop
+    IL_001d:  nop
     IL_001e:  stloc.0
     IL_001f:  ldstr      "en-US"
     IL_0024:  newobj     instance void [mscorlib]System.Globalization.CultureInfo::.ctor(string)
