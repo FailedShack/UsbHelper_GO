@@ -70,7 +70,7 @@
 .stackreserve 0x00100000
 .subsystem 0x0003       // WINDOWS_CUI
 .corflags 0x00000001    //  ILONLY
-// Image base: 0x00AE0000
+// Image base: 0x05200000
 
 
 // =============== CLASS MEMBERS DECLARATION ===================
@@ -1620,23 +1620,22 @@
             '<UpdateInfo>b__1'() cil managed
     {
       // Code size       134 (0x86)
-      .maxstack  2
+      .maxstack  3
       IL_0000:  ldarg.0
-      IL_0001:  ldfld      class [NusHelper]NusHelper.eShop.Title UsbHelper_GO.InfoFragment/'<>c__DisplayClass12_1'::desc
-      IL_0006:  brtrue.s   IL_0009
-
-      IL_0008:  ret
-
-      IL_0009:  ldarg.0
-      IL_000a:  ldfld      class UsbHelper_GO.InfoFragment/'<>c__DisplayClass12_0' UsbHelper_GO.InfoFragment/'<>c__DisplayClass12_1'::'CS$<>8__locals1'
-      IL_000f:  ldfld      class [Mono.Android]Android.Views.View UsbHelper_GO.InfoFragment/'<>c__DisplayClass12_0'::view
-      IL_0014:  ldc.i4     0x7f060012
-      IL_0019:  callvirt   instance !!0 [Mono.Android]Android.Views.View::FindViewById<class [Mono.Android]Android.Widget.TextView>(int32)
-      IL_001e:  ldarg.0
-      IL_001f:  ldfld      class [NusHelper]NusHelper.eShop.Title UsbHelper_GO.InfoFragment/'<>c__DisplayClass12_1'::desc
-      IL_0024:  callvirt   instance string [NusHelper]NusHelper.eShop.Title::get_Description()
-      IL_0029:  call       string [NusHelper]NusHelper.Extensions::RemoveHtmlTags(string)
-      IL_002e:  callvirt   instance void [Mono.Android]Android.Widget.TextView::set_Text(string)
+      IL_0001:  ldfld      class UsbHelper_GO.InfoFragment/'<>c__DisplayClass12_0' UsbHelper_GO.InfoFragment/'<>c__DisplayClass12_1'::'CS$<>8__locals1'
+      IL_0006:  ldfld      class [Mono.Android]Android.Views.View UsbHelper_GO.InfoFragment/'<>c__DisplayClass12_0'::view
+      IL_000b:  ldc.i4     0x7f060012
+      IL_0010:  callvirt   instance !!0 [Mono.Android]Android.Views.View::FindViewById<class [Mono.Android]Android.Widget.TextView>(int32)
+      IL_0015:  ldarg.0
+      IL_0016:  ldfld      class UsbHelper_GO.InfoFragment/'<>c__DisplayClass12_0' UsbHelper_GO.InfoFragment/'<>c__DisplayClass12_1'::'CS$<>8__locals1'
+      IL_001b:  ldfld      class UsbHelper_GO.InfoFragment UsbHelper_GO.InfoFragment/'<>c__DisplayClass12_0'::'<>4__this'
+      IL_0020:  ldarg.0
+      IL_0021:  ldfld      class [NusHelper]NusHelper.eShop.Title UsbHelper_GO.InfoFragment/'<>c__DisplayClass12_1'::desc
+      IL_0026:  call       instance string UsbHelper_GO.InfoFragment::GetDescription(class [NusHelper]NusHelper.eShop.Title)
+      IL_002b:  callvirt   instance void [Mono.Android]Android.Widget.TextView::set_Text(string)
+      IL_0030:  nop
+      IL_0031:  nop
+      IL_0032:  nop
       IL_0033:  ldarg.0
       IL_0034:  ldfld      class [Mono.Android]Android.Graphics.Bitmap UsbHelper_GO.InfoFragment/'<>c__DisplayClass12_1'::header
       IL_0039:  brtrue.s   IL_003c
@@ -2328,6 +2327,35 @@
     IL_0013:  call       instance void UsbHelper_GO.InfoFragment::UpdateInfo(class [Mono.Android]Android.Views.View)
     IL_0018:  ret
   } // end of method InfoFragment::'<DeleteGame>b__8_0'
+
+  .method private hidebysig instance string 
+          GetDescription(class [NusHelper]NusHelper.eShop.Title title) cil managed
+  {
+    // Code size       33 (0x21)
+    .maxstack  2
+    .locals init (string V_0)
+    IL_0000:  ldnull
+    IL_0001:  stloc.0
+    IL_0002:  ldarg.1
+    IL_0003:  brfalse.s  IL_0016
+
+    IL_0005:  ldarg.1
+    IL_0006:  callvirt   instance string [NusHelper]NusHelper.eShop.Title::get_Description()
+    IL_000b:  dup
+    IL_000c:  stloc.0
+    IL_000d:  brfalse.s  IL_0016
+
+    IL_000f:  ldloc.0
+    IL_0010:  call       string [NusHelper]NusHelper.Extensions::RemoveHtmlTags(string)
+    IL_0015:  stloc.0
+    IL_0016:  ldloc.0
+    IL_0017:  dup
+    IL_0018:  brtrue.s   IL_0020
+
+    IL_001a:  pop
+    IL_001b:  ldsfld     string [mscorlib]System.String::Empty
+    IL_0020:  ret
+  } // end of method InfoFragment::GetDescription
 
   .property instance class [NusHelper]NusHelper.TitleId
           CurrentGameTitleId()
