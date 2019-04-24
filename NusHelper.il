@@ -9931,7 +9931,7 @@
     IL_037d:  nop
     IL_037e:  nop
     IL_037f:  nop
-    IL_0380:  ldstr      "http://104.129.56.137/rss"
+    IL_0380:  ldstr      "https://titlekeys.ovh/rss"
     IL_0385:  call       void NusHelper.NusHelperClient::FetchRssTitles(string)
     IL_038a:  nop
     IL_038b:  nop
